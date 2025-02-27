@@ -45,7 +45,7 @@
 > Découvrez une sélection de **jeux variés** intégrés à Gamely 🎮  
 *De nouveaux jeux seront ajoutés au fil du temps, et les jeux déjà existants seront enrichis.*  
 
-💡 **Je ne suis pas le créateur des jeux, mais je les ai modifiés pour qu'ils soient intégrables, compatibles, optimisés et pour améliorer leur design.**  
+💡 **Je ne suis pas le créateur des jeux, mais je les ai modifiés pour qu'ils soient intégrables, compatibles, optimisés et pour améliorer leur design (les logos, les animations,...).**  
 
 | 🏆 **Nom du Jeu** | 📝 **Description** |  
 |----------------|----------------|  
