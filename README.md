@@ -7,7 +7,7 @@
 
 > **"Le jeu est une porte vers l'imaginaire, Gamely vous y emmène !"**  
 
-**Gamely** est un mini-site web interactif regroupant plusieurs jeux accessibles en ligne. Ce projet a été réalisé dans le cadre d'un exercice de **NSI** visant à développer un site web avec **HTML, CSS et JavaScript**.  
+###  💡 ***<span style="color: ff4081;">Je ne suis pas le créateur des jeux</span>, mais je les ai modifiés pour qu'ils soient intégrables, compatibles, optimisés et pour améliorer leur design.***
 
 ---  
 ## 🚀 Description du Projet  
