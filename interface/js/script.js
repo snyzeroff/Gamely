@@ -95,7 +95,7 @@ function closePopup() {
 
 // 📌 Fonction pour rediriger vers la page jeux.html avec un index de jeu
 function redirectToJeux(index) {
-    window.location.href = `jeux.html?game=${index}`;
+    window.location.href = `jeux.html?game=${index}#popup-container`;
 }
 
 // 🔄 Vérifie si une redirection a eu lieu pour ouvrir la popup après un clic sur la page d'accueil
