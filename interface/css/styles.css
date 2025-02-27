@@ -783,6 +783,39 @@ body {
     color: #ff6b6b;
 }
 
+/* Underline neon Paulehm */
+.neon-underline {
+    position: relative;
+    display: inline-block;
+    color: #ff4081;
+    transition: color 0.3s;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.neon-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    font-style: italic;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff4081, #ff6b6b);
+    box-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neon-underline:hover {
+    color: rgb(253, 103, 153);
+    text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081, 0 0 20px #ff4081;
+}
+
+.neon-underline:hover::after {
+    width: 100%;
+}
+
 /* 📌 Bouton GitHub dans le footer */
 .github-btn {
     margin-top: 15px;
