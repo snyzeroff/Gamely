@@ -1,8 +1,0 @@
-- https://github.com/Praashoo7/21-Cards-Trick?tab=readme-ov-file
-- https://github.com/Auroriax/js13k-2020
-- https://github.com/js13kGames/elematter
-- https://github.com/mumuy/pacman
-- https://github.com/javascriptacademy-stash/memory-card-game
-- https://github.com/devression/Maze-Game
-- https://github.com/KodeMeister-YT/Dash.github.io
-- https://hackernoon.com/8-games-you-can-play-right-in-this-article-built-with-html-css-and-js

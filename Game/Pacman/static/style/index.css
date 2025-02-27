@@ -1,0 +1,125 @@
+html { color: #000; background: #1a1a1a; }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset, img {
+    border: 0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+ol, ul {
+    list-style: none;
+}
+caption, th {
+    text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+q:before, q:after {
+    content: '';
+}
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+sup {
+    vertical-align: text-top;
+}
+sub {
+    vertical-align: text-bottom;
+}
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+legend {
+    color: #000;
+}
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+    color: #444;
+    font-family: 'Arial', sans-serif;
+}
+
+.mod-panel .hd {
+    padding-top: 20px;
+    line-height: 50px;
+    text-align: center;
+    background: #222;
+    color: #FFF;
+}
+
+.mod-panel .hd h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.mod-panel canvas {
+    display: block;
+    background: #111;
+    border: 2px solid #FFD700;
+}
+
+.mod-panel .info {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #EEE;
+    background: #222;
+}
+
+.mod-panel .info p {
+    font-size: 16px;
+    color: #FFF;
+}
+
+.mod-panel .intro {
+    padding: 15px;
+    background: #333;
+    border-radius: 10px;
+    color: #DDD;
+}
+
+.mod-panel .intro p {
+    line-height: 24px;
+    text-indent: 2em;
+    font-size: 16px;
+}
+
+.mod-button {
+    height: 32px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.mod-button .btn {
+    display: inline-block;
+    height: 32px;
+    padding: 0 15px;
+    line-height: 32px;
+    background-color: #FFD700;
+    border: 1px solid #FFC107;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #222;
+    border-radius: 5px;
+}
+
+.mod-button .btn:hover {
+    background: #FFA500;
+}

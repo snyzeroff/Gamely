@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamely - Jeux</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="logo"><a href="index.html" class="neon-text">GAMELY</a></h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html"><i data-lucide="home"></i> Accueil</a></li>
+                <li><a href="about.html"><i data-lucide="info"></i> À Propos</a></li>
+                <li class="nav-jeux"><a href="jeux.html"><i data-lucide="gamepad-2"></i> Jeux</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i data-lucide="menu"></i>
+        </div>
+    </header>    
+
+    <main class="content">
+        <section class="hero" data-aos="fade-up">
+            <img src="images/gamely.png" alt="Gamely Logo" class="hero-logo" data-aos="fade-up">
+            <h1 class="hero-title">La gallerie de Gamely !</h1>
+        </section>
+        <!-- 🎖️ Classement des Jeux -->
+        <section class="game-ranking" data-aos="fade-up">
+            <h2>🎖️ Top Jeux Préférés</h2>
+            <ol>
+                <li>1️⃣ <strong>Legilimens</strong> - Un jeu qui retourne ton cerveau !</li>
+                <li>2️⃣ <strong>Pacman</strong> - Nostalgie et divertissement garantis !</li>
+                <li>3️⃣ <strong>SpeedyVerse</strong> - Une course effrénée.</li>
+                <li>4️⃣ <strong>Memory Cards</strong> - Exerce ta mémoire !</li>
+                <li>5️⃣ <strong>AI Chess</strong> - Défi intellectuel contre une IA.</li>
+                <li>6️⃣ <strong>LabyQuest</strong> - Évasion et aventure.</li>
+            </ol>
+        </section>
+
+        <section class="game-section">
+            <div class="game-gallery">
+                <div class="game-card" onclick="openPopup(0)" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/legilimens.png" alt="Legilimens">
+                    <h3>Legilimens</h3>
+                </div>
+                <div class="game-card" onclick="openPopup(1)" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/memorycard.png" alt="Memory Cards">
+                    <h3>Memory Cards</h3>
+                </div>
+                <div class="game-card" onclick="openPopup(2)" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/labyquest.png" alt="LabyQuest">
+                    <h3>LabyQuest</h3>
+                </div>
+                <div class="game-card" onclick="openPopup(3)" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/aichess.png" alt="AI Chess">
+                    <h3>AI Chess</h3>
+                </div>
+                <div class="game-card" onclick="openPopup(4)" data-aos="fade-up" data-aos-delay="500">
+                    <img src="images/pacman.png" alt="Pacman">
+                    <h3>Pacman</h3>
+                </div>
+                <div class="game-card" onclick="openPopup(5)" data-aos="fade-up" data-aos-delay="600">
+                    <img src="images/speedyverse.png" alt="SpeedyVerse">
+                    <h3>SpeedyVerse</h3>
+                </div>                
+            </div>            
+        </section>
+    </main>
+    
+    <!-- 🌍 Footer avec sources et crédits -->
+    <footer class="footer" data-aos="fade-up">
+        <p>📚 Sources & Documentation :</p>
+        <ul>
+            <li><a href="https://stackoverflow.com/" target="_blank">Stackoverflow</a></li>
+            <li><a href="https://swiperjs.com/" target="_blank">Swiper.js</a></li>
+            <li><a href="https://developer.mozilla.org/fr/" target="_blank">MDN</a></li>
+            <li><a href="https://lucide.dev/" target="_blank">LucideICO</a></li>
+        </ul>
+        <p>🛠️ Développé par <strong>Le P & le B</strong>.</p>
+
+        <!-- 🔗 Bouton vers GitHub -->
+        <div class="github-btn">
+            <a href="https://github.com/ton-repo" target="_blank">
+                <i data-lucide="github"></i> Voir sur GitHub
+            </a>
+        </div>
+    </footer>
+
+    
+    <!-- Popups des jeux -->
+    <div id="popup-container" class="popup-container">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <img id="popup-image" src="" alt="Game Image">
+            <h3 id="popup-title"></h3>
+            <p id="popup-creator" class="popup-creator"></p>
+            <p id="popup-description"></p>
+            
+            <!-- Nouveau tableau des commandes -->
+            <table id="popup-commands" class="popup-commands">
+                <thead>
+                    <tr>
+                        <th>Touche</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ct dynam. rempli via JS -->
+                </tbody>
+            </table>
+    
+            <button id="play-game-btn" class="play-game-btn">Lancer le jeu</button>
+        </div>
+    </div>
+
+    <!-- 🎮 Popup du jeu en grand écran -->
+<div id="game-popup" class="game-popup">
+    <div class="game-popup-content">
+        <!-- 🔘 Boutons d'actions -->
+        <div class="game-popup-header">
+            <!-- Conteneur des boutons -->
+            <div class="game-controls">
+                <button id="fullscreen-btn" class="fullscreen-btn" onclick="toggleFullscreen()">
+                    <i data-lucide="maximize"></i> Plein écran
+                </button>
+                <button id="reload-game-btn" class="reload-game-btn" onclick="reloadGame()">
+                    <i data-lucide="refresh-cw"></i> Relancer
+                </button>
+            </div>
+        
+            <!-- Bouton de fermeture à droite -->
+            <span class="close-game-btn" onclick="closeGamePopup()">
+                <i data-lucide="x"></i>
+            </span>
+        </div>        
+
+        <!-- 🕹️ Jeu en iframe -->
+        <iframe id="game-iframe" src="" frameborder="0"></iframe>
+    </div>
+</div>
+
+    <!-- Scripts nécessaires -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons(); // Active les icônes dynamiques
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init();
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 30 },
+                1024: { slidesPerView: 4, spaceBetween: 40 }
+            }
+        });
+
+        function toggleMenu() {
+            const navLinks = document.querySelector(".nav-links");
+            navLinks.classList.toggle("active");
+        }
+    </script>           
+</body>
+</html>
