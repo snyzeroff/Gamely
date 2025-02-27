@@ -15,7 +15,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-    background: #000;
+    background: linear-gradient(90deg, #222, #1a1a1a);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -25,16 +27,17 @@ body {
 }
 
 .neon-text {
+    display: inline-block;
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
     color: #ff4081;
     text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081, 0 0 15px #ff4081;
-    transition: transform 0.3s;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .neon-text:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 /* 🌟 Navigation - Alignement des icônes */
@@ -753,7 +756,9 @@ body {
 .footer {
     margin-top: 50px;
     padding: 20px;
-    background: #111;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     text-align: center;
     color: white;
 }
@@ -1086,7 +1091,7 @@ body {
     transition: transform 0.3s;
 }
 
-.neon-text:hover {
+.neon-textC:hover {
     transform: scale(1.1);
 }
 
@@ -1101,8 +1106,8 @@ body {
     box-shadow: 0px 0px 15px rgba(255, 64, 129, 0.6);
     overflow: hidden;
     position: relative;
-    transition: height 0.6s ease-in-out; /* Transition fluide */
-    min-height: unset; /* Supprime toute contrainte */
+    transition: height 0.8s ease-in-out;
+    min-height: unset;
 }
 
 /* Centrage vertical et horizontal des slides */

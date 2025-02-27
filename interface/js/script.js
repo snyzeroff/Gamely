@@ -353,12 +353,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let activeSlide = document.querySelector(".presentation-carousel .swiper-slide-active");
         let carousel = document.querySelector(".presentation-carousel");
         if (activeSlide && carousel) {
-            // Si élément "table-container" existe dans la slide, on le sélectionne, sinn on prend la slide elle-même
+            // Si la slide contient un élément avec la classe "table-container", on utilise sa hauteur
             let content = activeSlide.querySelector(".table-container") || activeSlide;
-            let slideHeight = content.scrollHeight;
-            carousel.style.height = `${slideHeight + 160}px`; // On ajoute un peu d'espace pour les contrôles /!\ (ultra important)
+            let newHeight = content.scrollHeight + 160; // On ajoute un peu d'espace
+            gsap.to(carousel, { height: newHeight, duration: 0.5, ease: "power2.inOut" });
         }
-    }
+    }    
     
     // 🎠 Initialisation unique de Swiper.js
     var swiper = new Swiper(".presentation-carousel", {
