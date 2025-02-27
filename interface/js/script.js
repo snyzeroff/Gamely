@@ -355,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (activeSlide && carousel) {
             // Si la slide contient un élément avec la classe "table-container", on utilise sa hauteur
             let content = activeSlide.querySelector(".table-container") || activeSlide;
-            let newHeight = content.scrollHeight + 120; // On ajoute un peu d'espace
+            let newHeight = content.scrollHeight + 120; // On ajoute un peu d'espace (ultra important)s
             gsap.to(carousel, { height: newHeight, duration: 0.5, ease: "power2.inOut" });
         }
     }    
