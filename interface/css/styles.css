@@ -327,7 +327,7 @@ body {
         position: absolute;
         top: 70px;
         right: 10px;
-        background: #000;
+        background: linear-gradient(to bottom, #1a1a1a, #2a2a2a);
         width: 200px;
         text-align: right;
         padding: 10px;

@@ -31,7 +31,11 @@
     <main class="content">
         <section class="hero" data-aos="fade-up">
             <img src="images/gamely.png" alt="Gamely Logo" class="hero-logo" data-aos="fade-up">
-            <h1 class="hero-title">La gallerie de Gamely !</h1>
+            <h1 class="hero-title">
+                <a href="#game-gallery" style="color: inherit; text-decoration: none;">
+                    La gallerie de Gamely !
+                </a>    
+            </h1>
         </section>
         <!-- 🎖️ Classement des Jeux -->
         <section class="game-ranking" data-aos="fade-up">
@@ -47,7 +51,7 @@
         </section>
 
         <section class="game-section">
-            <div class="game-gallery">
+            <div id="game-gallery" class="game-gallery">
                 <div class="game-card" onclick="openPopup(0)" data-aos="fade-up" data-aos-delay="100">
                     <img src="images/legilimens.png" alt="Legilimens">
                     <h3>Legilimens</h3>

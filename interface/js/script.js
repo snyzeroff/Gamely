@@ -93,7 +93,7 @@ function closePopup() {
     document.getElementById("popup-container").style.display = "none";
 }
 
-// 📌 Fonction pour rediriger vers la page jeux.html avec un index de jeu
+// 📌 Fonction pour rediriger vers la page jeux.html avec un index de jeu (lien ancre)
 function redirectToJeux(index) {
     window.location.href = `jeux.html?game=${index}#popup-container`;
 }
