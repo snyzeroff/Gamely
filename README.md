@@ -14,13 +14,8 @@
 
 🌟 **Gamely** propose une **expérience de jeu immersive** avec :  
 - 🎨 **Un design moderne** et fluide.  
-<<<<<<< HEAD
 - 📱 **Une interface responsive** adaptée aux petits écrans.
-=======
-- 📱 **Une interface responsive** adaptée aux petits écrans. 
->>>>>>> bd04989826231ba90589fd41e5c85de1e41efd4f
 - 🎡 **Un carrousel interactif** pour découvrir les jeux facilement.  
-- 🔥 **Des animations fluides** avec GSAP et AOS.js.  
 - 🕹️ **Des jeux intégrés accessibles en un clic** !  
 
 🔗 **Le site comprend trois pages principales :**  
@@ -45,7 +40,11 @@
 > Découvrez une sélection de **jeux variés** intégrés à Gamely 🎮  
 *De nouveaux jeux seront ajoutés au fil du temps, et les jeux déjà existants seront enrichis.*  
 
-💡 **<span style="color: ff4081;">Je ne suis pas le créateur des jeux</span>, mais je les ai modifiés pour qu'ils soient intégrables, compatibles, optimisés et pour améliorer leur design.**  
+> [!NOTE]
+> ***<span style="color: ff4081;">Je ne suis pas le créateur des jeux</span>***.
+> mais je les ai modifiés pour qu'ils soient intégrables,
+> compatibles, optimisés et pour améliorer leur design.
+
 
 | 🏆 **Nom du Jeu** | 📝 **Description** |  
 |----------------|----------------|  
