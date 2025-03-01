@@ -61,14 +61,9 @@ function openPopup(index) {
     const popupTitle = document.getElementById("popup-title");
     const popupDescription = document.getElementById("popup-description");
     const popupCreator = document.getElementById("popup-creator");
-    popupCreator.innerHTML = `Made by ${
-        gamesData[index].creators
-            .map(creator => `<a href="${creator.link}" target="_blank" class="creator-link">${creator.name}</a>`)
-            .join("  &  ")
-    }`;
+    popupCreator.innerHTML = `Made by <a href="${gamesData[index].creatorLink}" target="_blank" class="creator-link">${gamesData[index].creator}</a>`;
     const playGameBtn = document.getElementById("play-game-btn");
     const commandsTable = document.getElementById("popup-commands").querySelector("tbody");
-
     // Remplissage des infos du jeu
     popupImage.src = gamesData[index].image;
     popupTitle.textContent = gamesData[index].title;
@@ -189,10 +184,8 @@ const gamesData = [
         image: "images/aichess.png",
         description: "Jouez aux échecs contre une intelligence artificielle.",
         link: "../Game/ChessAI/index.html",
-        creators: [
-            { name: "jak_e (design)", link: "https://codepen.io/jak_e" },
-            { name: "Paulehm (algorithme)", link: "https://github.com/snyzeroff" }
-        ]
+        creator: "jak_e",
+        creatorLink: "https://codepen.io/jak_e"
     },
     {
         title: "Pacman",
