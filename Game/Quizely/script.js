@@ -129,7 +129,7 @@ const quizData = [
           ease: "power2.inOut",
           onComplete: function () {
               const logoContainer = document.querySelector(".quiz-logo-container");
-              const logoFixed = document.querySelector(".quiz-logo-hidden");
+              const logoFixed = document.querySelector(".quiz-logo-fixed");
   
               logoContainer.classList.remove("hidden");
               logoFixed.classList.add("quiz-logo-visible");
@@ -150,9 +150,9 @@ const quizData = [
               introScreen.style.display = "none";
               quizContainer.classList.remove("hidden");
               gsap.from(quizContainer, { opacity: 0, y: 30, duration: 0.5 });
-          }
+            }
       });
-  });      
+  });    
 });
 
 
