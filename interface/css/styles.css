@@ -440,6 +440,10 @@ body {
     background: #ff4081;
     color: white;
 }
+.popup-commands td svg {
+    display: block;
+    margin: auto;
+}
 
 /* 🔥 Icônes Lucide et touches encadrées */
 .popup-commands td i,
