@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🎯 Conteneur principal du QCM */
+.quiz-container {
+  width: 90%;
+  max-width: 650px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 64, 129, 0.5);
+  transition: width 0.3s, height 0.3s ease-in-out;
+}
+
+/* 🎯 Titres et mise en page */
+.quiz-header h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ff4081;
+  text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081;
+}
+
+.quiz-header ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* 🎯 Affichage des questions */
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;  /* Espacement entre chaques cases */
+  font-size: 18px;
+  color: #ffffff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;  /* Rend cliquable toute la case */
+  border: 2px solid transparent;
+}
+
+/* 🌟 Survol avec effet neon */
+.quiz-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(255, 64, 129, 0.6);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.quiz-option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid #ff4081;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    position: relative;
+    transition: box-shadow 0.3s, background 0.3s;
+  }
+  
+  .quiz-option input[type="radio"]:hover {
+    box-shadow: 0 0 6px #ff4081;
+  }
+  
+  .quiz-option input[type="radio"]:checked {
+    background: #ff4081;
+    box-shadow: 0 0 3px #ff4081;
+  }
+  
+
+.quiz-option label {
+  cursor: pointer;
+  width: 100%;
+}
+
+/* 🌟 Effet visuel quand coché */
+.quiz-option input:checked + label {
+  color: #ff4081;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(255, 64, 129, 0.8);
+}
+
+/* 🌟 Bordure accentuée quand coché */
+.quiz-option input:checked + label::before {
+  border: 2px solid #ff4081;
+  background: #ff4081;
+}
+
+/* 🎯 Bouton de soumission (Suivant / Recommencer) */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff4081, #ff6b6b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submit-btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #ff6b6b, #ff4081);
+  box-shadow: 0 0 10px rgba(255, 64, 129, 0.7);
+}
+
+/* 📱 Adaptatif pour les petits écrans */
+@media (max-width: 768px) {
+  .quiz-container {
+    width: 95%;
+    padding: 20px;
+  }
+  .quiz-option {
+    font-size: 16px;
+  }
+}
+
+/* 🌟 Écran d'intro */
+.intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+}
+
+/* 🎯 Logo au centre */
+.quiz-logo {
+  width: 450px;
+  opacity: 0; /* Caché au départ */
+  transform: translateY(50px); /* Départ plus bas */
+  filter: drop-shadow(0 0 10px rgba(255, 64, 129, 0.8));
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+/* Ajoute une classe pour le slide-up */
+.quiz-logo.slide-up {
+  opacity: 1;
+  transform: translateY(-30px);
+}
+
+/* 🌟 Logo réduit et placé en haut après animation, prenant de l’espace */
+.logo-fixed {
+  position: relative; /* Permet de pousser les éléments vers le bas */
+  width: 320px;
+  margin: 20px auto; /* Centre le logo et ajoute de l’espace */
+  display: block;
+  opacity: 1;
+  transition: all 0.8s ease-in-out;
+}
+
+/* 🌟 Conteneur du logo en haut du QCM */
+.logo-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px; /* Ajoute un espace sous le logo */
+  padding-top: 30px;
+}
+
+/* 🌟 Logo réduit et placé en haut après animation */
+.quiz-container .quiz-logo {
+  width: 320px;
+  opacity: 1;
+  transition: all 0.8s ease-in-out;
+  display: block;
+  margin: 0 auto; /* Centre le logo */
+}
+
+/* 🌟 Conteneur du logo en haut de la page */
+.quiz-logo-container {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  z-index: 10;
+  transition: margin-top 0.8s ease-in-out; /* Animation fluide */
+}
+
+/* 🌟 Logo fixe au-dessus du quiz */
+.quiz-logo-fixed {
+  width: 180px;
+  opacity: 0; /* Caché au départ */
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 🌟 Espacement du haut du QCM pour éviter que le logo le chevauche */
+.quiz-container {
+  margin-top: 0px; /* Crée de l’espace entre le logo et le quiz */
+  transition: margin-top 0.8s ease-in-out;
+  padding-top: 10px; /* Évite tout chevauchement */
+}
+
+
+/* 🚀 Bouton Commencer */
+.start-btn {
+  position: relative;
+  top: -60px;
+  padding: 18px 35px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #ff4081, #ff6b6b);
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s ease-out, background 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+/* 🌟 Effet zoom et glow au survol */
+.start-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ff6b6b, #ff4081);
+  box-shadow: 0px 0px 15px rgba(255, 64, 129, 0.7);
+}
+
+/* 🎯 Logo réduit en haut après animation */
+.logo-small {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  transition: all 0.5s ease-in-out;
+}
+
+/* 🌟 Logo en haut du quiz après l'intro */
+.quiz-logo-container img {
+  width: 150px; /* Réduit la taille */
+  max-width: 100%;
+  transition: width 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* 🌟 Caché au départ, mais avec transition fluide */
+.quiz-logo-hidden {
+  width: 150px; /* Taille réduite */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s;
+}
+
+/* Ajoute une classe pour le rendre visible après l'intro */
+.quiz-logo-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

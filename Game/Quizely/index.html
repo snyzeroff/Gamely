@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Gamely</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- GSAP pour les animations fluides -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+  <!-- 🟢 Écran d'intro avec le logo -->
+  <div class="intro-screen">
+    <img src="quiz-nb.png" alt="Quiz Gamely" class="quiz-logo">
+    <button class="start-btn">Commencer le Quiz</button>
+  </div>
+
+  <!-- 🎯 Logo fixe en haut après l'intro -->
+  <div class="quiz-logo-container hidden">
+    <img src="quiz-nb.png" alt="Quiz Gamely" class="quiz-logo-fixed">
+  </div>
+
+  <!-- 🎯 Conteneur du QCM -->
+  <div class="quiz-container hidden" id="quiz">
+    <div class="quiz-header">
+      <h2 id="question">Question text</h2>
+      <ul>
+        <li class="quiz-option">
+          <input type="radio" name="answer" id="a" class="answer">
+          <label for="a" id="a_text">Réponse A</label>
+        </li>
+        <li class="quiz-option">
+          <input type="radio" name="answer" id="b" class="answer">
+          <label for="b" id="b_text">Réponse B</label>
+        </li>
+        <li class="quiz-option">
+          <input type="radio" name="answer" id="c" class="answer">
+          <label for="c" id="c_text">Réponse C</label>
+        </li>
+        <li class="quiz-option">
+          <input type="radio" name="answer" id="d" class="answer">
+          <label for="d" id="d_text">Réponse D</label>
+        </li>
+      </ul>
+    </div>
+    <button id="submit" class="submit-btn">Suivant</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -41,7 +41,12 @@ const gameCommands = [
             { icon: "arrow-up", action: "Accélérer" },
             { icon: "arrow-down", action: "Ralentir" }
         ]
-    }
+    },
+    { // Quizely
+        keys: [
+            { icon: "mouse", action: "Cliquer sur les boutons" }
+        ]
+    },
 ];
 
 // 📌 Fonction pour ouvrir la popup
@@ -56,7 +61,11 @@ function openPopup(index) {
     const popupTitle = document.getElementById("popup-title");
     const popupDescription = document.getElementById("popup-description");
     const popupCreator = document.getElementById("popup-creator");
-    popupCreator.innerHTML = `Made by <a href="${gamesData[index].creatorLink}" target="_blank" class="creator-link">${gamesData[index].creator}</a>`;
+    popupCreator.innerHTML = `Made by ${
+        gamesData[index].creators
+            .map(creator => `<a href="${creator.link}" target="_blank" class="creator-link">${creator.name}</a>`)
+            .join("  &  ")
+    }`;
     const playGameBtn = document.getElementById("play-game-btn");
     const commandsTable = document.getElementById("popup-commands").querySelector("tbody");
 
@@ -180,8 +189,10 @@ const gamesData = [
         image: "images/aichess.png",
         description: "Jouez aux échecs contre une intelligence artificielle.",
         link: "../Game/ChessAI/index.html",
-        creator: "jak_e",
-        creatorLink: "https://codepen.io/jak_e"
+        creators: [
+            { name: "jak_e (design)", link: "https://codepen.io/jak_e" },
+            { name: "Paulehm (algorithme)", link: "https://github.com/snyzeroff" }
+        ]
     },
     {
         title: "Pacman",
@@ -198,7 +209,16 @@ const gamesData = [
         link: "../Game/SpeedyVerse/index.html",
         creator: "KodeMeister",
         creatorLink: "https://github.com/KodeMeister-YT"
+    },
+    {
+        title: "Quizely",
+        image: "images/quiz.png",
+        description: "Testez vos connaissances avec des questions variées sur Gamely !",
+        link: "../Game/Quizely/index.html",
+        creator: "Paulehm",
+        creatorLink: "https://github.com/snyzeroff"
     }
+    
 ];
 
 // 🔄 Vérifie s'il y a un paramètre "game" dans l'URL
