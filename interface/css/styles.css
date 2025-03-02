@@ -819,12 +819,14 @@ body {
 .github-btn {
     margin-top: 15px;
     text-align: center;
+    display: inline-flex;          /* Aligne l'icône et le texte */
+    align-items: center;           /* Centre verticalement l'icône et le texte */
 }
 
 .github-btn a {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;                      /* Réduit l'espacement entre l'icône et le texte */
     padding: 12px 20px;
     background: linear-gradient(135deg, #ff4081, #ff6b6b);
     color: white;
@@ -839,8 +841,21 @@ body {
 }
 
 .github-btn a:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);        /* Légèrement moins fort pour garder l'effet élégant */
     box-shadow: 0px 0px 10px rgba(255, 64, 129, 0.8);
+}
+
+/* Icon GitHub */
+.github-icon {
+    width: 24px;                   /* Taille réduite pour mieux s'aligner */
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 4px;             /* Réduit l'espace entre l'icône et le texte */
+    transition: transform 0.3s ease-in-out;
+}
+
+.github-btn:hover .github-icon {
+    transform: scale(1.1);
 }
 
 /* 🎖️ Classement des jeux */
