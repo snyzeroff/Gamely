@@ -54,6 +54,7 @@
 | **LabyQuest** *(Génération de labyrinthe)* | Trouvez la sortie d’un labyrinthe généré aléatoirement. |  
 | **SpeedyVerse** | Un jeu de course en 3D où vous devez éviter les obstacles et atteindre la ligne d'arrivée. |  
 | **AI Chess** *(Jeu d'échecs IA)* | Affrontez une intelligence artificielle aux échecs et testez vos stratégies. |  
+| **Quizely** | Testez vos connaissances avec des questions variées sur Gamely ! | 
 
 ---  
 ## 🎨 Technologies Utilisées  
@@ -74,7 +75,7 @@
 2. 2️⃣ **[Stack Overflow](https://stackoverflow.com/)** - Forum
 3. 3️⃣ **[CSS-Tricks](https://css-tricks.com/)** - Blog
 4. 4️⃣ **[Can I use](https://caniuse.com/)** - Outil de compatibilité
-5. 5️⃣ **[Dribbble](https://dribbble.com/)** - Plateforme créative
+5. 5️⃣ **[Dribbble](https://dribbble.com/)** - Plateforme créative (inspiration)
 
 ---
 

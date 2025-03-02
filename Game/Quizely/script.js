@@ -50,7 +50,7 @@ const quizData = [
   function loadQuiz() {
     deselectAnswers();
     
-    // Animation GSAP pour l'apparition de la question
+    // Animation GSAP pour apparition question
     gsap.fromTo(quiz, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 });
     
     const currentQuizData = quizData[currentQuiz];
@@ -135,10 +135,10 @@ const quizData = [
               logoFixed.classList.add("quiz-logo-visible");
               gsap.to(logoContainer, { opacity: 1, visibility: "visible", duration: 0.8 });
   
-              // ✅ Réduction progressive de la taille du logo après l'intro
+              // ✅ Réduction progressive taille du logo après l'intro
               gsap.to(logoFixed, { width: "250px", duration: 0.8 });
   
-              // ✅ Ajuste l'espacement pour réduire l’espace entre le logo et le quiz
+              // ✅ Ajuste l'espacement (réduit) entre logo et quiz
               gsap.to(quizContainer, { marginTop: "-20px", duration: 0.5 });
           }
       });

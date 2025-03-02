@@ -250,7 +250,7 @@ function openGame(index) {
         return;
     }
 
-    // Ajoute une transition fluide pour masquer le popup de présentation
+    // Ajoute une transition pour masquer le popup de présentation
     popupContainer.style.animation = "fadeOutScale 0.4s ease forwards";
     setTimeout(() => {
         popupContainer.style.display = "none";
@@ -260,7 +260,7 @@ function openGame(index) {
     // Charger le jeu dans l'iframe
     gameIframe.src = gamesData[index].link;
 
-    // Affichage de la popup en plein écran avec un effet d'apparition fluide
+    // Affichage de la popup en plein écran avec un effet d'apparition
     gamePopup.style.display = "flex";
     gamePopup.style.animation = "fadeInScale 0.4s ease forwards";
 
@@ -368,7 +368,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (activeSlide && carousel) {
             // Si la slide contient un élément avec la classe "table-container", on utilise sa hauteur
             let content = activeSlide.querySelector(".table-container") || activeSlide;
-            let newHeight = content.scrollHeight + 120; // On ajoute un peu d'espace (ultra important)s
+            let newHeight = content.scrollHeight + 120; // On ajoute un peu d'espace (ultra important)
             gsap.to(carousel, { height: newHeight, duration: 0.5, ease: "power2.inOut" });
         }
     }    

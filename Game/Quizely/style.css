@@ -42,13 +42,13 @@ body {
 .quiz-option {
   display: flex;
   align-items: center;
-  gap: 12px;  /* Espacement entre chaques cases */
+  gap: 12px;
   font-size: 18px;
   color: #ffffff;
   padding: 12px 15px;
   border-radius: 8px;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  cursor: pointer;  /* Rend cliquable toute la case */
+  cursor: pointer;
   border: 2px solid transparent;
 }
 
@@ -156,7 +156,7 @@ body {
 .quiz-logo {
   width: 450px;
   opacity: 0; /* Caché au départ */
-  transform: translateY(50px); /* Départ plus bas */
+  transform: translateY(50px);
   filter: drop-shadow(0 0 10px rgba(255, 64, 129, 0.8));
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
@@ -169,9 +169,9 @@ body {
 
 /* 🌟 Logo réduit et placé en haut après animation, prenant de l’espace */
 .logo-fixed {
-  position: relative; /* Permet de pousser les éléments vers le bas */
+  position: relative;
   width: 320px;
-  margin: 20px auto; /* Centre le logo et ajoute de l’espace */
+  margin: 20px auto;
   display: block;
   opacity: 1;
   transition: all 0.8s ease-in-out;
@@ -181,7 +181,7 @@ body {
 .logo-container {
   width: 100%;
   text-align: center;
-  margin-bottom: 20px; /* Ajoute un espace sous le logo */
+  margin-bottom: 20px;
   padding-top: 30px;
 }
 
@@ -191,7 +191,7 @@ body {
   opacity: 1;
   transition: all 0.8s ease-in-out;
   display: block;
-  margin: 0 auto; /* Centre le logo */
+  margin: 0 auto;
 }
 
 /* 🌟 Conteneur du logo en haut de la page */
@@ -201,7 +201,7 @@ body {
   padding: 10px 0;
   position: relative;
   z-index: 10;
-  transition: margin-top 0.8s ease-in-out; /* Animation fluide */
+  transition: margin-top 0.8s ease-in-out;
 }
 
 /* 🌟 Logo fixe au-dessus du quiz */
@@ -215,7 +215,7 @@ body {
 
 /* 🌟 Espacement du haut du QCM pour éviter que le logo le chevauche */
 .quiz-container {
-  margin-top: 0px; /* Crée de l’espace entre le logo et le quiz */
+  margin-top: 0px;
   transition: margin-top 0.8s ease-in-out;
   padding-top: 10px; /* Évite tout chevauchement */
 }
@@ -257,20 +257,20 @@ body {
 
 /* 🌟 Logo en haut du quiz après l'intro */
 .quiz-logo-container img {
-  width: 150px; /* Réduit la taille */
+  width: 150px;
   max-width: 100%;
   transition: width 0.8s ease-in-out, opacity 0.8s ease-in-out;
 }
 
-/* 🌟 Caché au départ, mais avec transition fluide */
+/* 🌟 Caché au départ */
 .quiz-logo-hidden {
-  width: 150px; /* Taille réduite */
+  width: 150px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.8s ease-in-out, visibility 0.8s;
 }
 
-/* Ajoute une classe pour le rendre visible après l'intro */
+/* 🌟 visible après l'intro */
 .quiz-logo-visible {
   opacity: 1 !important;
   visibility: visible !important;
