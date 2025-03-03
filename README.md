@@ -41,7 +41,7 @@
 *De nouveaux jeux seront ajoutés au fil du temps, et les jeux déjà existants seront enrichis.*  
 
 > [!NOTE]
-> ***<span style="color: ff4081;">Je ne suis pas le créateur des jeux</span>***.
+> ***<span style="color: ff4081;">Je ne suis pas le créateur de la plupart des jeux</span>***.
 > mais je les ai modifiés pour qu'ils soient intégrables,
 > compatibles, optimisés et pour améliorer leur design.
 
