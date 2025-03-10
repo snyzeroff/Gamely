@@ -138,7 +138,6 @@ const quizData = [
         return selectedBtn ? selectedBtn.getAttribute("data-value") : undefined;
     }
   }
-
   
   submitBtn.addEventListener('click', () => {
     const answer = getSelected();
@@ -157,7 +156,6 @@ const quizData = [
       }
     }
   });
-  
   
   // 🌟 Gérer les boutons vrai ou faux
   const trueFalseButtons = document.querySelectorAll(".true-false-btn");
