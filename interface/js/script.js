@@ -207,7 +207,7 @@ const gamesData = [
         title: "Quizely",
         image: "images/quiz.png",
         description: "Testez vos connaissances avec des questions variées sur Gamely !",
-        link: "../Game/Quizely/index.html",
+        link: "../Game/Quizely/QCM_JavaScript.html",
         creator: "Paulehm",
         creatorLink: "https://github.com/snyzeroff"
     }

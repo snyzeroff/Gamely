@@ -1,38 +1,52 @@
 const quizData = [
-    {
+  {
       question: "Combien de jeux sont présentés sur Gamely ?",
       a: "4",
       b: "6",
       c: "8",
       d: "10",
       correct: "b",
-    },
-    {
+      type: "choice"
+  },
+  {
+      question: "Le site Gamely est-il gratuit ?",
+      correct: "true",
+      type: "true-false"
+  },
+  {
       question: "Quel jeu est basé sur la mémoire ?",
       a: "Legilimens",
       b: "Memory Cards",
       c: "SpeedyVerse",
       d: "AI Chess",
       correct: "b",
-    },
-    {
-      question: "Quel jeu utilise un plateau d'échecs ?",
-      a: "Pacman",
-      b: "Memory Cards",
-      c: "AI Chess",
-      d: "LabyQuest",
-      correct: "c",
-    },
-    {
-      question: "Quel jeu propose une course en 3D ?",
-      a: "SpeedyVerse",
-      b: "Legilimens",
-      c: "Pacman",
-      d: "AI Chess",
-      correct: "a",
-    }
-  ];
-  
+      type: "choice"
+  },
+  {
+      question: "Quel est le concept de SpeedyVerse ?",
+      keywords: ["course", "voiture"],
+      type: "text",
+      placeholder: "****** de ******"
+  },
+  {
+      question: "Quel est le jeux qui se joue avec un échiquier ?",
+      keywords: ["chess", "chessai", "chess-ai", "chess ai", "aichess", "ai chess", "ai-chess"],
+      type: "text",
+      placeholder: "*******"
+  }
+];
+  /**
+   * Vérifie si la réponse texte contient les mots-clés attendus.
+   * Ignore les majuscules et les espaces inutiles.
+   * @param {string} userAnswer - La réponse donnée par l'utilisateur.
+   * @param {string[]} keywords - Les mots-clés attendus.
+   * @returns {boolean} - Retourne true si au moins un mot-clé est trouvé, sinon false.
+   */
+  function checkTextAnswer(userAnswer, keywords) {
+    const answer = userAnswer.toLowerCase().trim();  // Convertit la réponse en minuscule et supprime les espaces inutiles
+    return keywords.some(keyword => answer.includes(keyword.toLowerCase()));  // Compare sans se soucier des majuscules
+  }
+
   const quiz = document.getElementById('quiz');
   const answerEls = document.querySelectorAll('.answer');
   const questionEl = document.getElementById('question');
@@ -41,6 +55,16 @@ const quizData = [
   const c_text = document.getElementById('c_text');
   const d_text = document.getElementById('d_text');
   const submitBtn = document.getElementById('submit');
+  const textInput = document.getElementById("text-input");
+
+  // ✅ Permet de soumettre avec la touche "Entrée"
+  textInput.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+          event.preventDefault();
+          submitBtn.click();
+      }
+  });
+
   
   let currentQuiz = 0;
   let score = 0;
@@ -54,33 +78,77 @@ const quizData = [
     gsap.fromTo(quiz, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 });
     
     const currentQuizData = quizData[currentQuiz];
+    const textInput = document.getElementById("text-input");
+    const trueFalseOptions = document.getElementById("true-false-options");
+    const choicesContainer = document.getElementById("choices");
+
+    // Cache tous les types de questions par défaut
+    textInput.style.display = "none";
+    trueFalseOptions.style.display = "none";
+    choicesContainer.style.display = "none";
+
     questionEl.innerText = currentQuizData.question;
-    a_text.innerText = currentQuizData.a;
-    b_text.innerText = currentQuizData.b;
-    c_text.innerText = currentQuizData.c;
-    d_text.innerText = currentQuizData.d;
-  }
+
+    if (currentQuizData.type === "choice") {
+        choicesContainer.style.display = "block";
+        a_text.innerText = currentQuizData.a;
+        b_text.innerText = currentQuizData.b;
+        c_text.innerText = currentQuizData.c;
+        d_text.innerText = currentQuizData.d;
+    } else if (currentQuizData.type === "text") {
+        textInput.value = "";
+        textInput.style.display = "block";
+        textInput.placeholder = currentQuizData.placeholder || "Votre réponse ici...";
+    } else if (currentQuizData.type === "true-false") {
+        trueFalseOptions.style.display = "block";
+    }
+}
   
   function deselectAnswers() {
     answerEls.forEach(answerEl => answerEl.checked = false);
   }
   
   function getSelected() {
-    let answer;
-    answerEls.forEach(answerEl => {
-      if (answerEl.checked) {
-        answer = answerEl.id;
-      }
-    });
-    return answer;
+    const currentQuizData = quizData[currentQuiz];
+    
+    if (currentQuizData.type === "choice") {
+        let answer;
+        answerEls.forEach(answerEl => {
+            if (answerEl.checked) {
+                answer = answerEl.id;
+            }
+        });
+        return answer;
+    } 
+    
+    else if (currentQuizData.type === "text") {
+        const textInput = document.getElementById("text-input");
+        const userAnswer = textInput.value.trim();
+
+        // Vérifie si la réponse contient au moins un des mots-clés
+        if (userAnswer.length > 0 && checkTextAnswer(userAnswer, currentQuizData.keywords)) {
+            return "correct";
+        } else if (userAnswer.length > 0) {
+            return "incorrect";
+        }
+    } 
+    
+    else if (currentQuizData.type === "true-false") {
+        const selectedBtn = document.querySelector(".true-false-btn.selected");
+        return selectedBtn ? selectedBtn.getAttribute("data-value") : undefined;
+    }
   }
+
   
   submitBtn.addEventListener('click', () => {
     const answer = getSelected();
     if (answer) {
-      if (answer === quizData[currentQuiz].correct) {
+      if (
+        answer === "correct" ||
+        answer === quizData[currentQuiz].correct
+    ) {
         score++;
-      }
+    }    
       currentQuiz++;
       if (currentQuiz < quizData.length) {
         loadQuiz();
@@ -90,6 +158,16 @@ const quizData = [
     }
   });
   
+  
+  // 🌟 Gérer les boutons vrai ou faux
+  const trueFalseButtons = document.querySelectorAll(".true-false-btn");
+  trueFalseButtons.forEach((btn) => {
+      btn.addEventListener("click", function () {
+          trueFalseButtons.forEach((b) => b.classList.remove("selected"));
+          btn.classList.add("selected");
+      });
+  });
+
   function showResult() {
     quiz.innerHTML = `
       <h2 style="text-align: center; color: #ff4081; text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081;">
